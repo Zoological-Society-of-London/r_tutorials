@@ -1,0 +1,43 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="generator" content="R package animation 2.4">
+	<title>Animations Using the R Language</title>
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/scianimator.css" />
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+
+	<script src="js/jquery-1.4.4.min.js"></script>
+	<script src="js/jquery.scianimator.min.js"></script>
+  <script type="text/javascript" src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+  <script type="text/javascript" src="http://yandex.st/highlightjs/7.3/languages/r.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+
+	<div class="scianimator"><div id="animation1" style="display: inline-block;"></div></div>
+	<div class="scianimator" style="width: 600px; text-align: left"><pre><code class="r">## Animations generated in R version 3.2.0 (2015-04-16) using the package
+##   animation
+library(animation)
+library(ggplot2)
+for (i in seq(10, 500, by = 100)) {
+    g <- ggplot(bird_data[i, ], aes(x = lon, y = lat)) + 
+        geom_point(data = bird_data, shape = 21, fill = "lightgrey", 
+            color = "grey", size = 3, alpha = 0.2) + geom_point(size = 10) + 
+        xlim(min(bird_data$lon), max(bird_data$lon)) + ylim(min(bird_data$lat), 
+        max(bird_data$lat)) + geom_point(data = head(bird_data, 
+        1), color = "red", size = 4) + geom_point(data = tail(bird_data, 
+        1), color = "blue", size = 4) + coord_fixed(ratio = 2/1) + 
+        theme_bw()
+    print(g)
+}
+## R version 3.2.0 (2015-04-16)
+## Platform: x86_64-apple-darwin13.4.0 (64-bit)
+## Other packages: animation 2.4, ggplot2 1.0.1</code></pre></div>
+	<script src="js/animation1.js"></script>
+<!-- highlight R code -->
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="generator" content="R package animation 2.4">
+	<title>Animations Using the R Language</title>
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/scianimator.css" />
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+
+	<script src="js/jquery-1.4.4.min.js"></script>
+	<script src="js/jquery.scianimator.min.js"></script>
+  <script type="text/javascript" src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+  <script type="text/javascript" src="http://yandex.st/highlightjs/7.3/languages/r.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+
+	<div class="scianimator"><div id="windowed_data_outline" style="display: inline-block;"></div></div>
+	<div class="scianimator" style="width: 600px; text-align: left"><pre><code class="r">## Animations generated in R version 3.2.0 (2015-04-16) using the package
+##   animation
+library(ggplot2)
+library(animation)
+for (i in 10:(nrow(bird_data) - 10)) {
+    g <- ggplot(bird_data[(i - 10):(i + 10), ], aes(x = lon, 
+        y = lat)) + geom_point(data = bird_data, shape = 21, 
+        fill = "lightgrey", color = "grey", size = 3, alpha = 0.2) + 
+        geom_point(size = 3, color = "darkgreen", alpha = 0.5) + 
+        geom_path(data = coast, aes(x = long, y = lat, group = group), 
+            color = "lightgrey") + xlim(min(bird_data$lon), 
+        max(bird_data$lon) + 0.1) + ylim(min(bird_data$lat) - 
+        0.1, max(bird_data$lat)) + ggtitle(paste("Date/Time: ", 
+        as.POSIXct(bird_data[i, ]$unix, origin = "1970-01-01"), 
+        sep = "")) + coord_fixed(ratio = 2/1) + theme_bw()
+    print(g)
+}
+## R version 3.2.0 (2015-04-16)
+## Platform: x86_64-apple-darwin13.4.0 (64-bit)
+## Other packages: ggplot2 1.0.1, animation 2.4</code></pre></div>
+	<script src="js/windowed_data_outline.js"></script>
+<!-- highlight R code -->
+
+</body>
+</html>
