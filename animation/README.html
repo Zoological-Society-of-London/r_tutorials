@@ -292,7 +292,12 @@ saveVideo({
 
 ani.options(oopts)</code></pre>
 <p>Resulting in (<em>You may need to view this in a browser like Chrome or Firefox to see the video</em>):</p>
-<p><a href="https://github.com/Zoological-Society-of-London/r_tutorials/raw/master/animation/output.mpg">MPEG Video</a> <a href="https://github.com/Zoological-Society-of-London/r_tutorials/raw/master/animation/output.mp4">MP4 Video</a> <a href="https://github.com/Zoological-Society-of-London/r_tutorials/raw/master/animation/output.webm">WebM Video</a></p>
+<ul>
+<li><a href="https://github.com/Zoological-Society-of-London/r_tutorials/raw/master/animation/output.mpg">MPEG Video</a></li>
+<li><a href="https://github.com/Zoological-Society-of-London/r_tutorials/raw/master/animation/output_5000k.mpg">High Quality MPEG Video</a></li>
+<li><a href="https://github.com/Zoological-Society-of-London/r_tutorials/raw/master/animation/output.mp4">MP4 Video</a></li>
+<li><a href="https://github.com/Zoological-Society-of-London/r_tutorials/raw/master/animation/output.webm">WebM Video</a></li>
+</ul>
 <p>The <code>animation</code> package is using programs like <code>ffmpeg</code> or <code>convert</code> to create vidoes and GIFs respectively, we can also use these commands ourselves using the <code>system</code> command (or using a terminal/DOS prompt):</p>
 <p>Some examples of just creating a video from an image sequence…</p>
 <pre class="r"><code># Create a MPG video called output.mpg from the image sequence in 'images' where each images are called Rplot0.png, Rplot1.png, etc
