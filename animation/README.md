@@ -326,13 +326,9 @@ ani.options(oopts)
 
 Resulting in (*You may need to view this in a browser like Chrome or Firefox to see the video*): 
 
-<a href="https://github.com/Zoological-Society-of-London/r_tutorials/raw/master/animation/output.mp4">here</a>
-
-<video width="300" height="300" controls>
-  <source src="output.mp4" type="video/mp4">
-  <source src="output.webm" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+<a href="https://github.com/Zoological-Society-of-London/r_tutorials/raw/master/animation/output.mpg">MPEG Video</a>
+<a href="https://github.com/Zoological-Society-of-London/r_tutorials/raw/master/animation/output.mp4">MP4 Video</a>
+<a href="https://github.com/Zoological-Society-of-London/r_tutorials/raw/master/animation/output.webm">WebM Video</a>
 
 The ```animation``` package is using programs like ```ffmpeg``` or ```convert``` to create vidoes and GIFs respectively, we can also use these commands ourselves using the ```system``` command (or using a terminal/DOS prompt):
 
