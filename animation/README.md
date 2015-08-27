@@ -111,7 +111,7 @@ for (i in seq(10, 500, by=100)) {
 ## HTML file created at: animation1.html
 ```
 
-<a href="animation1.html" target="_blank">Result here</a> 
+<a href="http://htmlpreview.github.io/?https://github.com/Zoological-Society-of-London/r_tutorials/blob/master/animation/animation1.html" target="_blank">Result here</a> 
 
 ```saveGIF``` is commonly suggested as a way to create movies, here we take the 5 frames we created above and the ```animation``` package uses ```ImageMagick``` (the ```convert``` program you might see below) to assemble these as an animated GIF. ImageMagick is free and can be installed for OSX or windows:
 
@@ -196,7 +196,7 @@ saveHTML({
   }
 },ani.width = 600, ani.height=600, img.name = "animation2", imgdir = "animation2", htmlfile = "animation2.html")
 ```
-<a href="animation2.html" target="_blank">Result here</a> 
+<a href="http://htmlpreview.github.io/?https://github.com/Zoological-Society-of-London/r_tutorials/blob/master/animation/animation2.html" target="_blank">Result here</a> 
 
 Here, we've adapted the plot to show a small 'window' of data to get an idea of the dynamics around the current point
 
@@ -215,7 +215,7 @@ saveHTML({
   }
 }, ani.width = 600, ani.height=600, img.name = "windowed_data", interval=0.1, imgdir = "windowed_data", htmlfile = "index_window.html")
 ```
-<a href="index_window.html" target="_blank">Result here</a> 
+<a href="http://htmlpreview.github.io/?https://github.com/Zoological-Society-of-London/r_tutorials/blob/master/animation/index_window.html" target="_blank">Result here</a> 
 
 And we could also get some coastline data (from OpenStreetMap) and add time to the title of the plot:
 
@@ -279,7 +279,7 @@ saveHTML({
 }, ani.width = 600, ani.height=600, img.name = "windowed_data_outline", imgdir = "windowed_data_outline", htmlfile = "windowed_data_outline.html")
 ```
 
-<a href="windowed_data_outline.html" target="_blank">Result here</a> 
+<a href="http://htmlpreview.github.io/?https://github.com/Zoological-Society-of-London/r_tutorials/blob/master/animation/windowed_data_outline.html" target="_blank">Result here</a> 
 
 Interestingly, if we wanted to fiddle with some of the animation options, but didn't want to have to regenerate the source images, something like the following can be used. Here we're changing the interval to be about 20 frames per second. The important part is ```use.dev=FALSE``` which tells the package not to use the current plot device. There's also no code inside the inner brackets.
 
@@ -291,7 +291,7 @@ saveHTML({
  }, use.dev = FALSE, ani.width = 600, ani.height=600, interval=0.05, img.name = "windowed_data_outline", imgdir = "windowed_data_outline", htmlfile = "windowed_data_outline_fast.html")
 ```
 
-<a href="windowed_data_outline_fast.html" target="_blank">Result here</a> 
+<a href="http://htmlpreview.github.io/?https://github.com/Zoological-Society-of-London/r_tutorials/blob/master/animation/windowed_data_outline_fast.html" target="_blank">Result here</a> 
 
 For each of these HTML examples, the ```animation``` package has created a directory full of images which it is showing us as an animation (using javascript). If, instead of using ```saveHTML``` we had used ```saveVideo``` then the package would have used ```ffmpeg``` to combine these into a vidoe file.
 

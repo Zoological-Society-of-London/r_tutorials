@@ -135,7 +135,7 @@ for (i in seq(10, 500, by=100)) {
 }
 },ani.width = 600, ani.height=600, img.name = &quot;animation1&quot;, imgdir = &quot;animation1&quot;, htmlfile = &quot;animation1.html&quot;)</code></pre>
 <pre><code>## HTML file created at: animation1.html</code></pre>
-<p><a href="animation1.html" target="_blank">Result here</a></p>
+<p><a href="http://htmlpreview.github.io/?https://github.com/Zoological-Society-of-London/r_tutorials/blob/master/animation/animation1.html" target="_blank">Result here</a></p>
 <p><code>saveGIF</code> is commonly suggested as a way to create movies, here we take the 5 frames we created above and the <code>animation</code> package uses <code>ImageMagick</code> (the <code>convert</code> program you might see below) to assemble these as an animated GIF. ImageMagick is free and can be installed for OSX or windows:</p>
 <ul>
 <li>OSX: <a href="http://cactuslab.com/imagemagick/" class="uri">http://cactuslab.com/imagemagick/</a></li>
@@ -199,7 +199,7 @@ saveHTML({
     print(g)
   }
 },ani.width = 600, ani.height=600, img.name = &quot;animation2&quot;, imgdir = &quot;animation2&quot;, htmlfile = &quot;animation2.html&quot;)</code></pre>
-<p><a href="animation2.html" target="_blank">Result here</a></p>
+<p><a href="http://htmlpreview.github.io/?https://github.com/Zoological-Society-of-London/r_tutorials/blob/master/animation/animation2.html" target="_blank">Result here</a></p>
 <p>Here, we’ve adapted the plot to show a small ‘window’ of data to get an idea of the dynamics around the current point</p>
 <pre class="r"><code># Same as before, but this time showing a small 'window' of 20 points
 # This took 7.5 minutes on my macbook for approx 1500 images at 1000x1000 pixels
@@ -213,7 +213,7 @@ saveHTML({
     print(g)
   }
 }, ani.width = 600, ani.height=600, img.name = &quot;windowed_data&quot;, interval=0.1, imgdir = &quot;windowed_data&quot;, htmlfile = &quot;index_window.html&quot;)</code></pre>
-<p><a href="index_window.html" target="_blank">Result here</a></p>
+<p><a href="http://htmlpreview.github.io/?https://github.com/Zoological-Society-of-London/r_tutorials/blob/master/animation/index_window.html" target="_blank">Result here</a></p>
 <p>And we could also get some coastline data (from OpenStreetMap) and add time to the title of the plot:</p>
 <pre class="r"><code># Let's use the open street map library to get some coast information from OSM
 #install.packages(&quot;osmar&quot;)
@@ -260,13 +260,13 @@ saveHTML({
     print(g)
   }
 }, ani.width = 600, ani.height=600, img.name = &quot;windowed_data_outline&quot;, imgdir = &quot;windowed_data_outline&quot;, htmlfile = &quot;windowed_data_outline.html&quot;)</code></pre>
-<p><a href="windowed_data_outline.html" target="_blank">Result here</a></p>
+<p><a href="http://htmlpreview.github.io/?https://github.com/Zoological-Society-of-London/r_tutorials/blob/master/animation/windowed_data_outline.html" target="_blank">Result here</a></p>
 <p>Interestingly, if we wanted to fiddle with some of the animation options, but didn’t want to have to regenerate the source images, something like the following can be used. Here we’re changing the interval to be about 20 frames per second. The important part is <code>use.dev=FALSE</code> which tells the package not to use the current plot device. There’s also no code inside the inner brackets.</p>
 <pre class="r"><code>saveHTML({
   ## Don't do anything here, we're going to use the existing images...
    
  }, use.dev = FALSE, ani.width = 600, ani.height=600, interval=0.05, img.name = &quot;windowed_data_outline&quot;, imgdir = &quot;windowed_data_outline&quot;, htmlfile = &quot;windowed_data_outline_fast.html&quot;)</code></pre>
-<p><a href="windowed_data_outline_fast.html" target="_blank">Result here</a></p>
+<p><a href="http://htmlpreview.github.io/?https://github.com/Zoological-Society-of-London/r_tutorials/blob/master/animation/windowed_data_outline_fast.html" target="_blank">Result here</a></p>
 <p>For each of these HTML examples, the <code>animation</code> package has created a directory full of images which it is showing us as an animation (using javascript). If, instead of using <code>saveHTML</code> we had used <code>saveVideo</code> then the package would have used <code>ffmpeg</code> to combine these into a vidoe file.</p>
 <p>This is much quicker and produces something that’s I’ve found easier to use in powerpoint, etc. However, to use this option requires that <code>ffmpeg</code> is installed. Instructions on how to install this are here:</p>
 <ul>
