@@ -148,7 +148,7 @@ However I find that creating animated GIFs is only really suitable for animation
 
 - The ```animation``` package also has a ```saveMovie``` option which acts in the same way to ```saveGIF``` so be careful to with the distinction between ```saveVideo``` (makes a video file) and ```saveMovie``` (makes a GIF)
 
-Before, we create a video, let's make sure we have our animation looking the way we really want. First, we could plot each point individually:
+Before, we create a video, let's make sure we have our animation looking the way we really want. First, we could plot each point individually (I've limited this to the first 100 frames):
 
 ```{r eval=FALSE}
 # Load the animation library
@@ -157,7 +157,8 @@ library(animation)
 # saveHTML will create an image for each frame of the movie and then crete a webpage with an little interface to visualise these images as an animation. By default the images will be stored in the current directory in the folder 'images' as Rplot1.png, Rplot2.png, etc.
 # This took 7.5 minutes on my macbook for approx 1500 images at 1000x1000 pixels
 saveHTML({
-  for (i in 1:nrow(bird_data)) {
+  #for (i in 1:nrow(bird_data)) {
+  for (i in 1:100) {
     g <- ggplot(bird_data[i, ], aes(x=lon, y=lat)) + 
     geom_point() + 
     xlim(min(bird_data$lon), max(bird_data$lon)) +
@@ -175,14 +176,15 @@ Here, we've adapted the plot to show a small 'window' of data to get an idea of 
 # Same as before, but this time showing a small 'window' of 20 points
 # This took 7.5 minutes on my macbook for approx 1500 images at 1000x1000 pixels
 saveHTML({
-  for (i in 10:(nrow(bird_data)-10)) {
+  #for (i in 10:(nrow(bird_data)-10)) {
+  for (i in 10:110) {
     g <- ggplot(bird_data[(i-10):(i+10), ], aes(x=lon, y=lat)) + 
     geom_point() + 
     xlim(min(bird_data$lon), max(bird_data$lon)) +
     ylim(min(bird_data$lat), max(bird_data$lat))
     print(g)
   }
-}, ani.width = 600, ani.height=600, img.name = "windowed_data", imgdir = "windowed_data", htmlfile = "index_window.html")
+}, ani.width = 600, ani.height=600, img.name = "windowed_data", interval=0.1, imgdir = "windowed_data", htmlfile = "index_window.html")
 ```
 <a href="index_window.html" target="_blank">Result here</a> 
 
@@ -229,7 +231,8 @@ Then bringing everything together...
 # Same as before, but this time showing a small 'window' of 20 points
 # This took 7.5 minutes on my macbook for approx 1500 images at 1000x1000 pixels
 saveHTML({
-  for (i in 10:(nrow(bird_data)-10)) {
+  #for (i in 10:(nrow(bird_data)-10)) {
+  for (i in 10:500)) {
     g <- ggplot(bird_data[(i-10):(i+10), ], aes(x=lon, y=lat)) + 
     geom_point(data = bird_data, shape=21, fill="lightgrey", color="grey", size=3, alpha=0.2) +
     geom_point(size=3, color="darkgreen", alpha=0.5) + 

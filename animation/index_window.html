@@ -22,7 +22,7 @@
 ##   animation
 library(ggplot2)
 library(animation)
-for (i in 10:(nrow(bird_data) - 10)) {
+for (i in 10:110) {
     g <- ggplot(bird_data[(i - 10):(i + 10), ], aes(x = lon, 
         y = lat)) + geom_point() + xlim(min(bird_data$lon), 
         max(bird_data$lon)) + ylim(min(bird_data$lat), max(bird_data$lat))
