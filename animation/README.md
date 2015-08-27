@@ -8,7 +8,7 @@ Robin Freeman, IoZ
 
 Often datasets can be hard to visualise in static two-dimensional graphs (and this is particulartly true of spatio-temporal data such as tracking data).
 
-As an example, the following is a plot of the movements of a seabird off the coast of the UK (Colonsay) (data is available <a href="bird_data.csv">here</a>):
+As an example, the following is a plot of the movements of a seabird off the coast of the UK (Colonsay) (data is available <a href="https://github.com/Zoological-Society-of-London/r_tutorials/raw/master/animation/bird_data.csv">here</a>):
 
 
 ```r
@@ -325,6 +325,8 @@ ani.options(oopts)
 
 
 Resulting in (*You may need to view this in a browser like Chrome or Firefox to see the video*): 
+
+<a href="https://github.com/Zoological-Society-of-London/r_tutorials/raw/master/animation/output.mp4">here</a>
 
 <video width="300" height="300" controls>
   <source src="output.mp4" type="video/mp4">

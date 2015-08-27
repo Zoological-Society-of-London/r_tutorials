@@ -293,6 +293,8 @@ ani.options(oopts)
 
 Resulting in (*You may need to view this in a browser like Chrome or Firefox to see the video*): 
 
+<a href="https://github.com/Zoological-Society-of-London/r_tutorials/raw/master/animation/output.mp4">here</a>
+
 <video width="300" height="300" controls>
   <source src="output.mp4" type="video/mp4">
   <source src="output.webm" type="video/mp4">
