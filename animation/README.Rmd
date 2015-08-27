@@ -20,7 +20,7 @@ As an example, the following is a plot of the movements of a seabird off the coa
 ```{r bird_data}
 # Read example tracking data
 bird_data <- read.csv("bird_data.csv")
-plot(bird_data$lon, bird_data$lat)
+plot(bird_data$lon, bird_data$lat, asp=2/1)
 ```
 
 We could make this a little prettier using ggplot, perhaps showing the calculated speed at each point, and fixing the aspect ratio:

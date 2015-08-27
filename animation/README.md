@@ -14,7 +14,7 @@ As an example, the following is a plot of the movements of a seabird off the coa
 ```r
 # Read example tracking data
 bird_data <- read.csv("bird_data.csv")
-plot(bird_data$lon, bird_data$lat)
+plot(bird_data$lon, bird_data$lat, asp=2/1)
 ```
 
 ![](README_files/figure-html/bird_data-1.png) 
@@ -184,7 +184,8 @@ Before, we create a video, let's make sure we have our animation looking the way
 library(animation)
 
 # saveHTML will create an image for each frame of the movie and then crete a webpage with an little interface to visualise these images as an animation. By default the images will be stored in the current directory in the folder 'images' as Rplot1.png, Rplot2.png, etc.
-# This took 7.5 minutes on my macbook for approx 1500 images at 1000x1000 pixels
+# I've adapted the current code (see commented line) to only process the first 100 rows
+# The whole file took 7.5 minutes on my macbook for approx 1500 images at 1000x1000 pixels
 saveHTML({
   #for (i in 1:nrow(bird_data)) {
   for (i in 1:100) {
@@ -203,7 +204,8 @@ Here, we've adapted the plot to show a small 'window' of data to get an idea of 
 
 ```r
 # Same as before, but this time showing a small 'window' of 20 points
-# This took 7.5 minutes on my macbook for approx 1500 images at 1000x1000 pixels
+# I've adapted the current code (see commented line) to only process the first 100 rows
+# Again, the whole file took about 7.5 minutes on my macbook for approx 1500 images at 1000x1000 pixels
 saveHTML({
   #for (i in 10:(nrow(bird_data)-10)) {
   for (i in 10:110) {
@@ -263,7 +265,8 @@ Then bringing everything together...
 
 ```r
 # Same as before, but this time showing a small 'window' of 20 points
-# This took 7.5 minutes on my macbook for approx 1500 images at 1000x1000 pixels
+# I've adapted the current code (see commented line) to only process the first 500 rows
+# The whole file took about 8 minutes on my macbook for approx 1500 images at 1000x1000 pixels
 saveHTML({
   #for (i in 10:(nrow(bird_data)-10)) {
   for (i in 10:500)) {
