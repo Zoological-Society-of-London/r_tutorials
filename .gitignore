@@ -1,3 +1,7 @@
 .Rproj.user
 .Rhistory
 .RData
+.Rproj
+
+# Hidden files
+.DS_Store
